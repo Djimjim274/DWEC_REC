@@ -1,3 +1,6 @@
+/* let num1=prompt("introduzca un número");
+let num2=prompt("introduzca otro número"); */
+
 
 let num1=parseInt(Math.random()*10);
 let num2=parseInt(Math.random()*10);
