@@ -12,13 +12,21 @@ let letra = prompt('Dibuje la letra que desea mostrar');
 let num = prompt('Dibuje cuántas veces quiere mostrarlo');
 
 const dibujaSierra=(letra,num)=>{
-for (let i = 1; i <= num; i++) {
 
-
-
-    console.log(` ${letra}\n `);
+    let dibuja="";
+    
+for (let i = num; i >= num; i--) {
+    let num1=i;
+for (let e = 0; e < num1; e++) {
+   dibuja=dibuja+'\n';
     
 }
+
+}
+return dibuja;
+   /*  console.log(` ${letra}\n `); */
+    
+
 
 }
 console.log(dibujaSierra(letra,num));

@@ -24,4 +24,4 @@ const calculaFactorial=(num)=> {
      
     }
   }
- console.log(calculaFactorial(7));
+ console.log(calculaFactorial(5));

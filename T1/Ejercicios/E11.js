@@ -2,12 +2,15 @@
 devolverá Impar. */
 
 let num= prompt('Escribe un número');
-const compruebaPar=(num)=>{
+const esPar=(num)=>{
     if(num%2===0){
-        console.log(`El número ${num} es un número par`);
+       return true;
     }else{
-        console.log(`El número ${num} es un número impar`);
+        return false;
     }
 }
 
-compruebaPar(num);
+//condición ternaria
+//condición sin if                       true                                       false   
+(esPar(num))? console.log(`El número ${num} es un número par`): console.log(`El número ${num} es un número impar`);
+esPar(num);
