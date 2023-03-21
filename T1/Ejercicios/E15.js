@@ -29,6 +29,8 @@ if(expR.test(dni)===true){
   numero=numero%23//hacemos la operaciíon para almacenar el resultado
   letras='TRWAGMYFPDXBNJZSQVHLCKET';
   letras=letras.substring(numero,numero+1);// preguntar diferencia entre el substriing y substrg
+/* substr->inicio y longitud
+substring-> inicio y final */
 
   //comprobamos el dni
   if(letras!=letra.toUpperCase()){
