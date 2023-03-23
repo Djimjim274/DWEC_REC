@@ -8,7 +8,7 @@ const repiteText=(cadena,veces)=>{
     for (let e = 1; e <= veces; e++) {
          mostrar+=cadena+' '; // es lo mismo que mostrar=mostrar+cadena+' ';
     }
-   return mostrar
+   return mostrar;
 
 }
 console.log(repiteText('hola Mundo',3));

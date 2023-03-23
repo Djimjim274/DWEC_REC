@@ -11,22 +11,20 @@ A */
 let letra = prompt('Dibuje la letra que desea mostrar');
 let num = prompt('Dibuje cuántas veces quiere mostrarlo');
 
-const dibujaSierra=(letra,num)=>{
+const dibujaSierra = (letra, num) => {
 
-    let dibuja="";
-    
-for (let i = num; i >= num; i--) {
-    let num1=i;
-for (let e = 0; e < num1; e++) {
-   dibuja=dibuja+'\n';
-    
-}
+    let dibuja = "";
+    for (let index = num; index >= 0; index--) {
+        let num2 = index
+        for (let i = 1; i <= num2; i++) {
+            dibuja += letra;
+        }
 
-}
-return dibuja;
-   /*  console.log(` ${letra}\n `); */
-    
+        dibuja = dibuja + '\n'
+    }
 
+    return dibuja
 
 }
-console.log(dibujaSierra(letra,num));
+console.log(dibujaSierra(letra, num));
+

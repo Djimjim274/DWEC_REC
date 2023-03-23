@@ -2,8 +2,6 @@
 miFunción("Hola Mundo") devolverá 10. */
 
 
-const contCar=(cadena)=>{
-   
-  return cadena.length ; 
-}
-console.log(contCar('Hola Mundo'));
+const contarCaracteres=cadena=>cadena.length ; 
+
+console.log(contarCaracteres('Hola Mundo'));
