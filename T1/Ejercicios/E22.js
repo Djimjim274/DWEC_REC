@@ -3,7 +3,7 @@ largo, pe. miFuncion("hola mundo adios mundo", "mundo") devolverá 2. */
 
 const contarCadena = (cadena, palabra) => {
 
-  let cont = 0;
+/*   let cont = 0;
   let posicion = 0;
 
   do {
@@ -18,8 +18,12 @@ const contarCadena = (cadena, palabra) => {
 
 
   return cont;
+ */
+let expReg= new RegExp(palabra,"gi"); //creamos una expresión regular; g=>busca mas de una ocurrencia
+return cadena.match(expReg).length  
+
 
 }
 
 /* let cadena='hola que tal hola'; */
-console.log(contarCadena('hola que hola tal hola', 'hola'))
+console.log(contarCadena('hola que hola hola tal hola', 'hola'))
