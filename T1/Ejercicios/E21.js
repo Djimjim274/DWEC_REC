@@ -3,7 +3,7 @@ Mundo") devolverá "odnuM aloH". */
 
 const invertirCad = (cadena) => {
 
-// se separaría letra por letra['h','o','l','a']
+//  SPLIT se separaría letra por letra['h','o','l','a']
     let separarCad = cadena.split("");
 
 //utilizamos el método reverse que sirve para invertir el array creado con el split
