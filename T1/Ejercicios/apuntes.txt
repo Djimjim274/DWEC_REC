@@ -13,3 +13,15 @@ bandera i permite mayusculas y minúsculas
 /^[0-9]{2}/=>que empiece por un número de dos dígitos
 match mirarlo
 
+Filter es como una cnodición al buscar en el array
+Reduce es como una operación
+
+const parImpares=(miVector)=>{
+
+  let par = miVector.filter(number => number % 2 === 0);
+  let impar= miVector.filter(number => number% 2 !== 0);  
+
+  return {pares:par,impares:impar} //devolvemos un objeto literal
+  esto se hace para no devolver un console.log
+}
+console.log(parImpares(miVector));

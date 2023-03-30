@@ -41,23 +41,38 @@ console.log(numeroElementos(miVector));
 }
 console.log(compruebaPar(miVector)); */
 
-let par = miVector.filter(number => number % 2 === 0);
-let impar= miVector.filter(number => number% 2 !== 0);
-console.log(`Hay ${par.length} números pares del vector, y son: \n ${par}`);
-console.log(`Hay ${impar.length} números impares del vector, y son: \n ${impar}`);
+const parImpares=(miVector)=>{
+
+  let par = miVector.filter(number => number % 2 === 0);
+  let impar= miVector.filter(number => number% 2 !== 0);  
+
+  return {pares:par,impares:impar} //devolvemos un objeto literal
+}
+console.log(parImpares(miVector));
+
+
+
 /* ----------------------------------------------------------------------------------- */
 /* c. La suma de todos los números negativos. */
 //primero filtro para encontrar los números negativos 
 let numNegativos=miVector.filter(x=>x<0) //hago la operación con el reduce
                                         .reduce((x,y)=>x+y);
-console.log(`La suma de negativos es`+numNegativos);
+console.log(`La suma de negativos es `+numNegativos);
+
+/* const numNegativos=(miVector)=>{
+
+    let vector=miVector.filter(number=>number<0).reduce((number,y)=>number+y);
+
+    return {vector:vector}
+}
+ */
 
 
 /* ----------------------------------------------------------------------------------- */
 /* d. El producto de todos los números positivos. */
-let productoPositivoss=miVector.filter(x=>x>0)
-                                        .reduce((x,y)=>x*y);
+let productoPositivoss=miVector.filter(x=>x>0).reduce((x,y)=>x*y);
 console.log(`El producto de los números positivos es `+productoPositivoss);                                        
+
 
 
 /* const productoPositivos=(miVector)=>{
@@ -80,16 +95,15 @@ console.log(productoPositivos(miVector)); */
 
 const compruebaPrimos=(miVector)=>{
 
-    let contPrimos=0;
-    let contNoPrimos=0;
+
   
 for (let i = 2; i < miVector.length; i++) {
    
      if(miVector[i]%i===0){
        
-     contNoPrimos++;
+        return true;
      }else{
-         contPrimos++;
+         return false;
      }
      
 }

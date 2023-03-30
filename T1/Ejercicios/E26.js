@@ -11,12 +11,8 @@ const compruebaCadena=(cadena)=>{
     [ao] =>indica que la última letra puede ser "a" o "o".
     $ =>indica el final de la cadena. */
 
-    if(expReg.test(cadena) ){
-        return true;
-    }else{
-        return false;
-    }
-/*     (expReg.test(cadena))?true:false; */
+return (expReg.test(cadena))?  true: false;
+
 
 }
 console.log(compruebaCadena('modo'));

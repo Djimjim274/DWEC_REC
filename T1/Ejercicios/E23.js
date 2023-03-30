@@ -2,63 +2,54 @@
 igual en un sentido que en otro), pe. mifuncion("Salas") devolverá true. */
 
 const compruebaPalindromo=(cadena)=>{
+//  Primero compruebo si tiene tilde y pasarlo a min
+   cadena =cadena.toLowerCase() ;
 
+  cadena=cadena.replaceAll("á","a") 
+  cadena=cadena.replaceAll("é","e")
+  cadena=cadena.replaceAll("í","i")
+  cadena=cadena.replaceAll("ó","o")
+  cadena=cadena.replaceAll("ú","u")
+
+// Ahora separo letra por letra
    let separaCadena= cadena.split("");
-console.log(separaCadena);
 
-   let invierteCadena=separaCadena.reverse();
-   console.log(invierteCadena);
+//Ahora invierto el orden
+   let invierteCadena=separaCadena.reverse(); 
+ 
+//convierto la la cadena en string
+   let unirCadena = invierteCadena.join("");
+
+//compruebo si tiene una tilde, quitarla
+ unirCadena=unirCadena.replaceAll(",","")
+ unirCadena= unirCadena.replaceAll(" ",""); 
+  console.log(unirCadena)
+
+//compruebo si tiene una tilde, quitarla
+cadena= cadena.replaceAll(" ","")
+cadena=cadena.replaceAll(",","")
+
+   console.log(cadena)
+
+   //compruebo si la cadena es igual que la cadena invertida que hemos unido antes
+  if(unirCadena===cadena){
+return true
+  }
+  return false; 
+  
 
 
-
-
-   if(invierteCadena.length===separaCadena.length){
+  /*  if(unirCadena===cadena){
     return true;
    }else{
     return false
    }
-
-
+ */
 }
 
-console.log(compruebaPalindromo('ojwo'));
+console.log(compruebaPalindromo('A la gorda, drógala'));
+console.log(compruebaPalindromo('A la catalana banal, atácala'));
+console.log(compruebaPalindromo('A mi loca Colima'));
+console.log(compruebaPalindromo('Adán no cede con Eva y Yavé no cede con nada'));
+console.log(compruebaPalindromo('A la godvdvrda, drógala'));
 
-
-
-
-
-
-
-
-
-
-
-
-/* const palindroma = (text="")=> {
-
-   let longitud=text.length
-   let textoA=""
-   let textoS=""
-
-   for (let i = 0; i< text.length;i++){
-       if(text.charAt(i)!=' '){
-           textoS += text.charAt(i)
-       }
-
-
-   for(longitud;longitud >= 0;longitud--){
-       if(text.charAt(longitud)!=' '){
-           textoA+= text.charAt(longitud)
-       }
-   }
- }
-
- if(textoS==textoA){
-
-   document.write("La frase es políndroma")
- }else{
-   document.write("La frase no es palíndroma")
- }
-
-}
- palindroma("ojo rojo") */
