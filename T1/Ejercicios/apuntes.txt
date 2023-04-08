@@ -12,7 +12,8 @@ bandera i permite mayusculas y minúsculas
 /^[0-9]{2}$/ => que empiece y acabe por un número de dos dígitos
 /^[0-9]{2}/=>que empiece por un número de dos dígitos
 match mirarlo
-
+,?\s*: Indica que se puede tener una coma opcional, 
+seguida de cero o más espacios en blanco.
 -Filter es como una cnodición al buscar en el array
 -Reduce es como una operación
 -join([separador]): devuelve una cadena con todos los elementos del array,
