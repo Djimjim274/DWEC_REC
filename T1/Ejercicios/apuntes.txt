@@ -1,9 +1,10 @@
 
 Expresiones Regulares
 
+Expresiones Regulares
 const expReg= /a/i;
-bandera g sige buscando todas las ocurrencias
-bandera i permite mayusculas y minúsculas
+  bandera g sige buscando todas las ocurrencias
+  bandera i permite mayusculas y minúsculas
 [^aeiou]=> todas las letras excepto aeiou
 [0-9] || \d => un dígito del 0 al 10
 \w caracter letra,min,mayusc o numero
@@ -11,16 +12,35 @@ bandera i permite mayusculas y minúsculas
 ^ => Inicio del patrón  const r = /^mas/i  master o Master
 /^[0-9]{2}$/ => que empiece y acabe por un número de dos dígitos
 /^[0-9]{2}/=>que empiece por un número de dos dígitos
-match mirarlo
 ,?\s*: Indica que se puede tener una coma opcional, 
 seguida de cero o más espacios en blanco.
+/[A-Za-z0-9]/=> caracter alfanumerico,mayuscula,minuscula o números
+/[^A-Za-z0-9]/=>que no admita carácteres alfanuméricos
+/[a-zA-Z\s]+/ Indica que se permiten una o más letras mayúsculas o minúsculas y espacios en blanco
+
+Funciones de String
+-split(caracter, [trozos]): separa la cadena mediante un carácter separador. Trozos
+indica el máximo de separaciones.
+-indexOf(texto, [indice]): devuelve la primera posición donde se encuentra el texto
+buscado
+-charAt(posicion): devuelve el carácter que se encuentre en la posición solicitada.
+-toLowerCase()/toUpperCase(): devuelve la cadena convertida a
+minúsculas/mayúsculas.
+-substring(inicio, [fin]): devuelve la subcadena comprendida entre la posición inicio
+y la posición fin.
+-match(): se usa para obtener todas las ocurrencias de una expresión regular dentro
+de una cadena.
+
+
+Funciones de arrays
 -Filter es como una cnodición al buscar en el array
 -Reduce es como una operación
 -join([separador]): devuelve una cadena con todos los elementos del array,
 separados por el texto que se incluya en separador.
 -match(): se usa para obtener todas las ocurrencias de una expresión regular dentro
 de una cadena.
-
+-sort(): ordena los elementos de un array alfabéticamente
+ponemos esto[...array].sort para no modificar el array original
 
 const parImpares=(miVector)=>{
 
