@@ -74,47 +74,36 @@ let productoPositivoss=miVector.filter(x=>x>0).reduce((x,y)=>x*y);
 console.log(`El producto de los números positivos es `+productoPositivoss);                                        
 
 
-
-/* const productoPositivos=(miVector)=>{
-    
-    let producto=1;
-    for (let i = 0; i < miVector.length; i++) {
-        if(miVector[i]>0){
-            producto*=miVector[i];
-        }
-        
-    }
-
-return `El producto de los números positivos es ${producto}`;
-}
-console.log(productoPositivos(miVector)); */
-
 /* ----------------------------------------------------------------------------------- */
 /* e. Cuántos son primos y cuáles son.*/
 
 
 const compruebaPrimos=(miVector)=>{
-
-
-  
+    let cont1=0;
+    let cont2=0;
 for (let i = 2; i < miVector.length; i++) {
    
      if(miVector[i]%i===0){
+       cont2++;
        
-        return true;
      }else{
-         return false;
+        cont1++;
+       
      }
      
 }
-   return `Hay ${contPrimos} primos y ${contNoPrimos} no primos`;
+   return `Hay ${cont1} primos y ${cont2} no primos`;
 
 }
 console.log(compruebaPrimos(miVector));//preguntar
+
+
+
+
+
+
 /* ----------------------------------------------------------------------------------- */
 /* f. Los números que ocupan las posiciones pares del vector.*/
-
-
 
 
 const posicionPares=(miVector)=>{

@@ -4,9 +4,11 @@ Funcion (“x”,10,”x”,2,”10,10, true,true) devolverá [“x”,10,2,”1
 let array=["x",10,"x",2,10,10,true,true]
 const eliminaElemento=(array)=>{
 
-    let arrayduplicado=[...array].filter((x)=>x==x?x:false);
-    return arrayduplicado;
+    let arrray=array.filter((x,index)=>array.indexOf(x)===index)
+
+/*     let arrayduplicado=[...array].filter((x)=>x==x?x:false); */
+    return arrray;
 }
 console.log(eliminaElemento(array))
 
-//preguntar a javier
+//Utilizar set mirarlo en casa

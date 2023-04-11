@@ -33,7 +33,7 @@ de una cadena.
 
 
 Funciones de arrays
--Filter es como una cnodición al buscar en el array
+-Filter es como una cnodición al buscar en el array siempre devuelve true o false
 -Reduce es como una operación
 -join([separador]): devuelve una cadena con todos los elementos del array,
 separados por el texto que se incluya en separador.

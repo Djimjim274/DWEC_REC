@@ -5,7 +5,7 @@ descendiente, pe. miFuncion([7, 5,7,8,6]) devolverá { asc: [5,6,7,7,8], desc: [
 let array = [2,3,7,1,2,3];
 
 const arraysOrdenados=(array)=>{
-
+    console.log(array)
   //  ponemos esto[...array].sort para no modificar el array original
     let arrayAsc=[...array].sort((x,y)=>x-y);
 //si queremos modificar el array original ponemos arrayAsc=array.sort((x,y)=>x-y);
