@@ -55,7 +55,7 @@ validaAno=(ano)=>{
 
 validaPais=(pais,array=[])=>{
 /*    return typeof(pais)==typeof(Array) ? pais : pais.join;
- */ 
+ */
 array.push(pais)
 return array
 
@@ -98,7 +98,7 @@ fichaTecnica=()=>{
 
 }
 
-let pelicula1 = new pelicula ("AB1234567","Camino","Alejandro Amenabar", 2015, ("España","Colombia"),"Comedy",8.4)
+let pelicula1 = new pelicula ("AB1234567","Camino","Alejandro Amenabar", 2015, ["España","Colombia"],"Comedy",8.4)
 let pelicula2 = new pelicula ("EB1234567","Spiderman","Roberto Amenabar", 2020, ("Francia","Colombia"),"Triller",6.4)
 
 console.log(pelicula2.fichaTecnica());

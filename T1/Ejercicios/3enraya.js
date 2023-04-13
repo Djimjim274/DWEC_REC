@@ -12,7 +12,8 @@ console.log(jugador2);  */
 let coordenadaX=prompt(`${jugador1} Proporcione la coordenada X  `);
 let coordenadaY=prompt(`${jugador1} Proporcione la coordenada Y para pintar su X`); */
 
-let coordenadaX,coordenadaY;
+let coordenadaX,coordenadaY,coordenada;
+let jugada;
 
 let tablero=[
     ['', '', ''],
@@ -20,7 +21,7 @@ let tablero=[
     ['', '', '']
   ];
 
-/* do { */
+ do { 
 coordenadaX=prompt(`Proporcione la coordenada X  `);
 coordenadaY=prompt(` Proporcione la coordenada Y para pintar su X`);
 
@@ -30,7 +31,7 @@ coordenadaY=prompt(` Proporcione la coordenada Y para pintar su X`);
     for (let x = 0; x < tablero.length; x++) {
         for (let y= 0; y < tablero[x].length; y++) {
           tablero[coordenadaX][coordenadaY]="X";
-       
+       jugada++
         }
       }
       return tablero[coordenadaX][coordenadaY];
@@ -46,6 +47,7 @@ const movimientoMaquina=(coordenadaX,coordenadaY,tablero)=>{
    for (let y= 0; y < tablero[x].length; y++) {
       if(tablero[coordenadaX][coordenadaY]!==tablero[coorX][coorY]){
     tablero[coorX][coorY]="O";
+    jugada++;
       }
     }
 
@@ -53,19 +55,18 @@ const movimientoMaquina=(coordenadaX,coordenadaY,tablero)=>{
 
 }
 
-
-
 movimientoJugador(coordenadaX,coordenadaY)
 movimientoMaquina(coordenadaX,coordenadaY,tablero);
 console.log(tablero)
+console.log(jugada)
 
 
 
-/* } while (coordenadaX>=3); */
+
 
 
 //creamos una función para que el jugador realice el movimiento y compruebe si está vacía
-/* 
+
 const movimiento=(coordenadaX,coordenadaY,coordenada)=>{
     if(tablero[coordenadaX][coordenadaY]===''){
         tablero[coordenadaX][coordenadaY]=coordenada;
@@ -77,35 +78,35 @@ const movimiento=(coordenadaX,coordenadaY,coordenada)=>{
 }
 
 
-const comprobarGanador = base => {
+const comprobarGanador = tablero => {
        
   // horizontales de X
-if (base[0][0] == 'X' && base[0][1] == 'X' && base[0][2] == 'X' ||
-  base[1][0] == 'X' && base[1][1] == 'X' && base[1][2] == 'X' ||
-  base[2][0] == 'X' && base[2][1] == 'X' && base[2][2] == 'X' ||
+if (tablero[0][0] == 'X' && tablero[0][1] == 'X' && tablero[0][2] == 'X' ||
+  tablero[1][0] == 'X' && tablero[1][1] == 'X' && tablero[1][2] == 'X' ||
+  tablero[2][0] == 'X' && tablero[2][1] == 'X' && tablero[2][2] == 'X' ||
   // verticales de X
-  base[0][0] == 'X' && base[1][0] == 'X' && base[2][0] == 'X' ||
-  base[0][1] == 'X' && base[1][1] == 'X' && base[2][1] == 'X' ||
-  base[0][2] == 'X' && base[1][2] == 'X' && base[2][2] == 'X' ||
+  tablero[0][0] == 'X' && tablero[1][0] == 'X' && tablero[2][0] == 'X' ||
+  tablero[0][1] == 'X' && tablero[1][1] == 'X' && tablero[2][1] == 'X' ||
+  tablero[0][2] == 'X' && tablero[1][2] == 'X' && tablero[2][2] == 'X' ||
   // izq abajo - der arriba X
-  base[0][2] == 'X' && base[1][1] == 'X' && base[2][0] == 'X' ||
+  tablero[0][2] == 'X' && tablero[1][1] == 'X' && tablero[2][0] == 'X' ||
   // izq arriba - der abajo X
-  base[0][0] == 'X' && base[1][1] == 'X' && base[2][2] == 'X') {
+  tablero[0][0] == 'X' && tablero[1][1] == 'X' && tablero[2][2] == 'X') {
  
   return 0;
  
           // horizontales de O
-} else if (base[0][0] == 'O' && base[0][1] == 'O' && base[0][2] == 'O' ||
-      base[1][0] == 'O' && base[1][1] == 'O' && base[1][2] == 'O' ||
-      base[2][0] == 'O' && base[2][1] == 'O' && base[2][2] == 'O' ||
+} else if (tablero[0][0] == 'O' && tablero[0][1] == 'O' && tablero[0][2] == 'O' ||
+      tablero[1][0] == 'O' && tablero[1][1] == 'O' && tablero[1][2] == 'O' ||
+      tablero[2][0] == 'O' && tablero[2][1] == 'O' && tablero[2][2] == 'O' ||
       // verticales de O
-      base[0][0] == 'O' && base[1][0] == 'O' && base[2][0] == 'O' ||
-      base[0][1] == 'O' && base[1][1] == 'O' && base[2][1] == 'O' ||
-      base[0][2] == 'O' && base[1][2] == 'O' && base[2][2] == 'O' ||
+      tablero[0][0] == 'O' && tablero[1][0] == 'O' && tablero[2][0] == 'O' ||
+      tablero[0][1] == 'O' && tablero[1][1] == 'O' && tablero[2][1] == 'O' ||
+      tablero[0][2] == 'O' && tablero[1][2] == 'O' && tablero[2][2] == 'O' ||
       // izq abajo - der arriba O
-      base[0][2] == 'O' && base[1][1] == 'O' && base[2][0] == 'O' ||
+      tablero[0][2] == 'O' && tablero[1][1] == 'O' && tablero[2][0] == 'O' ||
       // izq arriba - der abajo O
-      base[0][0] == 'O' && base[1][1] == 'O' && base[2][2] == 'O') {
+      tablero[0][0] == 'O' && tablero[1][1] == 'O' && tablero[2][2] == 'O') {
  
   return 1;
  
@@ -113,4 +114,6 @@ if (base[0][0] == 'X' && base[0][1] == 'X' && base[0][2] == 'X' ||
   return 2;
 }
 }
- */
+console.log(comprobarGanador(tablero));
+console.log(movimiento(coordenadaX,coordenadaY,coordenada));
+} while (jugada!==9); 

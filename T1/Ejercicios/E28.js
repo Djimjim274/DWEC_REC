@@ -7,25 +7,17 @@ d. Cuántas cadenas hay que tengan la ‘b’ y cuáles son. */
 let cadenas=['hola','perro','movil','televisor','pepe','barco'];
 
 //a. La cadena más corta.
-let cadenaCorta=cadenas.map((x)=>x).reduce((x,y)=>x<y? x:y)
+let cadenaCorta=cadenas.reduce((a,b)=>a.length<b.length?a:b);
 console.log(`La cadena más corta es `+cadenaCorta);
 
 
 //b. La cadena más larga.
-let cadenaLarga=cadenas.map((x)=>x).reduce((x,y)=>x>y? x:y)
+let cadenaLarga=cadenas.reduce((a,b)=>a.length>b.length?a:b);
 console.log(`La cadena más larga es `+cadenaLarga);
 
 //c. La cadena con más letras ‘a’.
 
-/* const cadenaA=(cadenas)=>{
- let expReg=/a+/g;
-    let cadena=cadenas.reduce( (strA,strB) =>(strA.split('').filter(e=>e==='a'))
-    .lenght> (strB.split('').filter(e=>e==='a')).lenght ? strA :strB)
 
-return cadena 
-
-}
-console.log(cadenaA(cadenas)) */
 console.log(`La cadena con más "a" es : ${cadenas.reduce( (strA, strB) => (strA.split('')
     .filter(c => c==='a')).length > (strB.split('').filter(c => c==='a')).length ? strA : strB)}`)
     

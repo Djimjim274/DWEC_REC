@@ -51,3 +51,13 @@ const parImpares=(miVector)=>{
   esto se hace para no devolver un console.log
 }
 console.log(parImpares(miVector));
+
+
+Ejercicios de examen
+dado un vector devuelve otro vector con los valores cuyas posiciones 
+sean números primos
+
+/* f. Los números que ocupan las posiciones pares del vector.*/
+
+
+const posicionPares=miVector=> miVector.filter((x,index)=>index%2===0);
