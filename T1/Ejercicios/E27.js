@@ -13,6 +13,7 @@ j. El vector ordenado de mayor a menos y viceversa.
 k. Buscar un valor introducido por el usuario e indicar si existe o no. */
 
 const miVector=[1,2,-2,-4,5,6,7,22];
+console.log(miVector);
 
 /* a. El número de elementos del vector. */
 const numeroElementos=(miVector)=>miVector.length;
@@ -106,21 +107,12 @@ console.log(compruebaPrimos(miVector));//preguntar
 /* f. Los números que ocupan las posiciones pares del vector.*/
 
 
-const posicionPares=(miVector)=>{
+const posicionPares=miVector=> miVector.filter((x,index)=>index%2===0);
 
-
-    for (let i = 0; i < miVector.length; i++) {
-        
-    if(miVector[i]%2===0){
-       
-    console.log( miVector.indexOf(miVector[i])); //como hacer esto
-       
-    }
-
-    }
-  
-}
 console.log(posicionPares(miVector));
+
+const posicionPrimos=miVector=> miVector.filter((x=2,index)=>index%2===0);
+console.log(posicionPrimos(miVector));
 
 //Preguntar si lo que pide es la posición en el Array
 
