@@ -22,40 +22,7 @@ con las edades que sean números casi primos (es un número que solo es divisibl
 por sí mismo, la unidad y por un solo número que no sea ni la unidad ni si mismo).
 Usa la función filter y map. (2p) */
 
-
-
-
-
-/* const indentificadores=(vector)=>{
-
- let  nombre=vector.map(vector=>vector.nombre);
- let dni=vector.map(vector=>vector.dni);
- cadena=cadena.toLowerCase();
-   cadena=cadena.replaceAll("Á","A") 
-   cadena=cadena.replaceAll("É","E")
-   cadena=cadena.replaceAll("Í","I")
-   cadena=cadena.replaceAll("Ó","O")
-   cadena=cadena.replaceAll("Ú","U") 
-   
-let apellido=vector["nombreCompleto"].split(" ");
-   
-    apellido=apellido[1].substring(0,3);
-    apellido=apellido.toLowerCase();
-    apellido=apellido.replaceAll("á","a") 
-    apellido=apellido.replaceAll("é","e")
-    apellido=apellido.replaceAll("í","i")
-    apellido=apellido.replaceAll("ó","o")
-    apellido=apellido.replaceAll("ú","u") 
-
- let  apellido2=vector["nombreCompleto"].split(" ");
-   apellido2=apellido2[2].substring(0,3)
-   apellido2=apellido2.toLowerCase();
-
-let DNI=vector["DNI"].slice(0,3);
-/* let DNI=vector["DNI"].substring(0,3); */
-
-
-let vector= [{ nombre: 'Ana Pérez Soler', DNI: '20102274k', edad: 2 },
+let vector= [{ nombre: 'Ana Pérez Soler', DNI: '20102274K', edad: 2 },
    { nombre: 'Álvaro García Castro', DNI: '24545535G', edad: 32 },
    { nombre: 'Paloma González Máxim', DNI: '45678912L', edad: 9 },
    { nombre: 'Alberto Alguacil Alcalde', DNI: '79753330W', edad: 17 }];
@@ -72,14 +39,14 @@ const indentificadores=(vector)=>{
 
 //sustituimos las palabras con tildes a sin tildes
                 // si incluye una á en mayus    la reenplaza por una a   si no deja el valor solo
-nombre=nombre.map((valor)=>valor.includes('á')?valor.replaceAll('á', 'a'):valor)
-nombre=nombre.map((valor)=>valor.includes('é')?valor.replaceAll('é', 'e'):valor)
-nombre=nombre.map((valor)=>valor.includes('í')?valor.replaceAll('í', 'i'):valor)
-nombre=nombre.map((valor)=>valor.includes('ó')?valor.replaceAll('ó', 'o'):valor)
-nombre=nombre.map((valor)=>valor.includes('ú')?valor.replaceAll('ú', 'u'):valor)
+nombre=nombre.map((valor)=>valor.replaceAll('á', 'a'))
+nombre=nombre.map((valor)=>valor.replaceAll('é', 'e'))
+nombre=nombre.map((valor)=>valor.replaceAll('í', 'i'))
+nombre=nombre.map((valor)=>valor.replaceAll('ó', 'o'))
+nombre=nombre.map((valor)=>valor.replaceAll('ú', 'u'))
 
 //dividimos el nombre y appelidos en un array
- nombre = nombre.map((valor) => valor.split(' ')); //['Ana' ,'Pérez' ,'Soler']
+ nombre = nombre.map((valor) => valor.split(' ')); //['Ana' 'Pérez' 'Soler']
  //ahora cogemos las posiciones necesarias
         //    diferencia entre el substring y slice
  let nom=nombre.map((valor)=>valor[0].substring(0,1));
@@ -92,9 +59,9 @@ let array=[];
 
 //hacemos un bucle para meter todo junto en un array
 for (let i = 0; i < nombre.length; i++) {
-   array[i] = nom[i] + '' + apellido1[i] + '' + apellido2[i] + '' + numerosDni[i];
-} //como ponerlo de otra manera
-return {array}
+   array[i]=`${nom[i]}${apellido1[i]}${apellido2[i]}${numerosDni[i]}`
+} // template strings
+return array
 
 }
 
@@ -128,7 +95,7 @@ let array=[];
 let dni=vector.map(vector=>vector.DNI);
  array=dni.filter(valor=>validaDNI(valor));
  
- return {array}
+ return array
 }
 
 
@@ -157,13 +124,14 @@ por sí mismo, la unidad y por un solo número que no sea ni la unidad ni si mis
 Usa la función filter y map. (2p)  */
 
 const casiPrimo=vector=>{
-   let index;
-if(vector.DNI==0 || vector.DNI==1)return false;
-
-for ( index = 2; index < vector.DNI; index++) {   
- if(vector.DNI%index===0)return false; //COMO HAGO PARA RETORNAR EL VECTOR
-}
-   return {vector};
+   let index = 0;
+   for (let i = vector - 1; i >= 2; i--){
+       if ( vector % i === 0 ){
+         index++;
+       }
+   }
+   return (index===1)?true:false;
+ 
 }
 
 /*  const posicionPrimos=(vector)=>vector.filter((x,num)=>esprimo(num))
