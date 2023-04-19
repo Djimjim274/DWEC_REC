@@ -33,11 +33,11 @@ const nombre=(entrada)=>{
 
     nom=nom.map(valor=>valor.toLowerCase());
 
-   nom=nom.map(valor=>valor.includes('á')? valor.replaceAll('á','a'):valor) 
-   nom=nom.map(valor=>valor.includes('é')? valor.replaceAll('é','e'):valor) 
-   nom=nom.map(valor=>valor.includes('í')? valor.replaceAll('í','i'):valor) 
-   nom=nom.map(valor=>valor.includes('ó')? valor.replaceAll('ó','o'):valor) 
-   nom=nom.map(valor=>valor.includes('ú')? valor.replaceAll('ú','u'):valor) 
+   nom=nom.map(valor=>valor.replaceAll('á','a')) 
+   nom=nom.map(valor=>valor.replaceAll('é','e')) 
+   nom=nom.map(valor=>valor.replaceAll('í','i')) 
+   nom=nom.map(valor=>valor.replaceAll('ó','o')) 
+   nom=nom.map(valor=>valor.replaceAll('ú','u')) 
 
      nom=nom.map(valor=>valor.split(" "));
 
@@ -72,4 +72,23 @@ const validarDNI=(dni)=>{
 return (arrayLetras[numero % 23]=== letra)?true:false
  
 }
+
+const dni=(entrada)=>{
+  let array=[]
+  let dni=entrada.map(entrada=>entrada.DNI);
+  array=dni.filter(x=>(validarDNI(x)))
+return array;
+}
+console.log(dni(entrada));
+
+/* c. Crea una función que reciba como parámetro el array original y devuelva un array
+con los objetos ordenados por edad de mayor a menor. NOTA: Usar la función sort.
+(2p) */
+
+const ordena=(entrada)=>  {return entrada.sort((a,b)=> b.edad -a.edad)}
+  
+
+
+console.log(ordena(entrada))
+
 
