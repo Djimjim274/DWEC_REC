@@ -35,17 +35,17 @@ const identificadores=(entrada)=>{
   
 //ultma letra del nombre
      //separamos el array en nombre ape1 y ape2
-     nombre=nombre.map(valor=>valor.split(" "));         console.log(nombre)
-     let nom=nombre.map(valor=>valor[0].substring(valor[0].length-1));   console.log(nom)
+     nombre=nombre.map(valor=>valor.split(" "));     
+     let nom=nombre.map(valor=>valor[0].substring(valor[0].length-1));  
 //3 últimas letras del apellido 1
-     let ape1=nombre.map(valor=>valor[1].substring(valor[1].length-3));  console.log(ape1)
+     let ape1=nombre.map(valor=>valor[1].substring(valor[1].length-3));  
 //3 primeras letras del apellido 2
      let ape2=nombre.map(valor=>valor[2].substring(0,3));        
 //pasamos el apellido a minúsculas
-     ape2=ape2.map(valor=>valor.toLowerCase());  console.log(ape2)
+     ape2=ape2.map(valor=>valor.toLowerCase());  
 // y los dígitos que ocupan las posiciones 3,4 y 5 (teniendo en cuenta que el primer dígito 
 //teniendo en cuenta como la posición 0) del dni    
-    let digitos=dni.map(valor=>valor.substring(3,6)); console.log(digitos)
+    let digitos=dni.map(valor=>valor.substring(3,6)); 
 
 let array=[];
 
@@ -84,7 +84,7 @@ const primos=entrada=>{
 }
 
 const comrpruebaPrimo=entrada=>{
-let edad=entrada.map(entrada=>entrada.edad); console.log(edad)
+let edad=entrada.map(entrada=>entrada.edad); 
     return edad.filter((valor=>primos(valor)))
 }
 
@@ -97,7 +97,40 @@ tener en cuenta los meses y los días, si no, el ejercicio no es válido. NOTA3:
 al usar Date y asegúrate de que estás construyendo correctamente la fecha, es posible
 que tengas que modificar la cadena de entrada. [1,5p] */
 
+const edad= "24/04/2002";
 
+const edadactual = edad =>{
+
+    edad= edad.split("/");
+
+
+    const fecha = new Date();
+    const añoActual = fecha.getFullYear();
+    const mesActual =fecha.getMonth()+1;
+    const diaActual = fecha.getDate();
+
+    let año=0;
+
+    año = añoActual-edad[2];
+
+    if(mesActual<edad[1]){
+        año=año-1;
+    }
+
+    if(mesActual==edad[1]){
+        if(diaActual<edad[0])
+        año=año-1;
+    }
+
+
+    return año ;
+
+
+
+}
+
+
+console.log(edadactual(edad));
 
 
 let array=[1,2,2,2,3,4,5]
