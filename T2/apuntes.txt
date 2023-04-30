@@ -1,0 +1,11 @@
+
+getElementById()
+const page = document.getElementById("page"); // <div id="page"></div>
+
+querySelector(selectorCSS)
+const p =document.querySelector("#miParrafo");
+
+createElement()
+const div = document.createElement("div");
+
+div.textContent = "Hola a todos"; // <div>Hola a todos</div>
