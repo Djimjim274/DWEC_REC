@@ -6,9 +6,10 @@ let form=document.querySelector('form');
 
 const cambiaColor=()=>{
 
+ let select=document.createElement('select');
 check.addEventListener('click',()=>{
       if(check.checked){
-        let select=document.createElement('select');
+       
         check.insertAdjacentElement('afterend',select)
       
         for (let i = 0; i < 10; i++) {
@@ -27,7 +28,8 @@ check.addEventListener('click',()=>{
 
         select.addEventListener('change',bodyColor)
     }else{
-        select.remove(); //?no se elimina
+        let select2=document.querySelector('select');
+        select2.remove(); //?no se elimina
     }
 })
 
