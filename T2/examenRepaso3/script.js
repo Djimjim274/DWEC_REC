@@ -38,7 +38,7 @@ check.addEventListener('click',()=>{
         select2.remove();
         
     }
-
+ 
  })
 
 
@@ -87,6 +87,17 @@ const verificaFormulario=()=>{
 }
 verificaFormulario();
 
+function error(texto,posicion){
+  
+  let mensajeError=document.createElement('P');
+  mensajeError.textContent=texto;
+  mensajeError.style.color='red'
+  let form=document.querySelector('.divFormulario')//cojo el div del usuario
+
+posicion.insertAdjacentElement('afterend',mensajeError)
+  setInterval(function(){mensajeError.remove();},3000);
+}
+
 
 
 
@@ -119,16 +130,6 @@ colores();
 
 
 
-function error(texto,posicion){
-  
-  let mensajeError=document.createElement('P');
-  mensajeError.textContent=texto;
-  mensajeError.style.color='red'
-  let form=document.querySelector('.divFormulario')//cojo el div del usuario
-
-posicion.insertAdjacentElement('afterend',mensajeError)
-  setInterval(function(){mensajeError.remove();},3000);
-}
 
 
 
