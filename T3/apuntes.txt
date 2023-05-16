@@ -1,0 +1,18 @@
+cookie clave=valor;espires=fecha_expiracion;path=/
+
+localstorage clave=valor siempre se guarda como un string
+siempre tengo que pasarlo a un string por ejemplo de un array a string
+Esto se hace con los métodos JSON.stringify(miArray)-> comvierte un
+array a un string
+
+localstorage es como una base de datos en el navegador,donde podemos 
+guardar datos
+
+
+localstorage es como un almacén 
+local
+
+
+AJAX
+
+
