@@ -14,38 +14,49 @@ NOTA: La entrada y salida se hace por HTML (el CSS no importa) */
 let select=document.querySelector('select');
 let option=document.querySelector('option');
 
-function comprueba(response) {
+const comprueba = response=> {
     if (!response.ok) {
       throw new Error(`No se ha podido acceder`);
     }
     return response.json();//retorna el JSON
   }
+
+const usuario=id=>{
+    const url = `https://reqres.in/api/users/${id}`;
+    fetch(url)
+    .then (comprueba)
+    .then(data=> {
+     
+      console.log(data.data)
+      
+        })
+    .catch (e=>console.log (e))
+
+    
+  }
+usuario(1);
+ 
+
   
 
-fetch('https://reqres.in/api/users')
+/* fetch('https://reqres.in/api/users')
 
   .then(comprueba)
   .then(data => {
     const users = data.data;//por qué se pòne esto
     users.forEach(user => {
-      console.log(`Usuario: ${user.first_name},  Imagen: ${user.avatar} `);
-
+      //debo de ponerlo con un return en vez de un console.log
+      
+    //  console.log(`Usuario: ${user.first_name},  Imagen: ${user.avatar} `);
+      return `${user.first_name},   ${user.avatar} `;
 
     });
 
-    select.addEventListener('click',()=>{ 
-        
-        users.forEach(user => {
-            if(user.id===select.value){
-              console.log(`Usuario: ${user.first_name},  Imagen: ${user.avatar} `);
-                }
-            })
-        })
 
   })
   .catch(error => {
     console.error('Error al obtener los usuarios:', error);
-  })
+  }) */
  
 
 /* 
