@@ -16,3 +16,96 @@ local
 AJAX
 
 
+
+
+
+
+Mi ejercicio 3
+
+let boton=document.querySelector('button');
+let cont=0;
+
+let array=[];
+boton.addEventListener('click',()=>{
+    let nombre=document.querySelector('#nombre').value;//obtengo el valor del imput
+    let puntos=document.querySelector('#puntos').value; //obtengo el valor del imputç
+    cont++;
+    let id=cont; //creamos un id que cada vez que pulsemos va a ir añadiendo un id distinto
+
+   
+//inicializamos el arrray
+
+let lc = localStorage.getItem("puntuaciones");//creamos la clave puntuaciones
+
+if(lc!==null){
+array=JSON.parse(lc);
+
+}
+
+//creamos un array de objetos literales donde almacenamos los puntos y el nomnbre
+let puntuacion={nombre:nombre,puntos:puntos,id:id};
+//añado el objeto literal al array
+array.push(puntuacion);
+//metemos en el localStorage la el nombre y la puntuación
+localStorage.setItem('puntuaciones',JSON.stringify(array));
+console.log("Valor guardado en localStorage.");
+
+//creo un div para meter dentro la tabla con los registros
+let div=document.createElement("div");
+boton.insertAdjacentElement('afterend',div)
+
+div.setAttribute('id',cont)
+let tabla=document.createElement("table");
+tabla.setAttribute('id','tabla')
+div.insertAdjacentElement('afterbegin',tabla);
+tabla.style.border='1px solid black'
+
+
+let registro=`Nombre: ${nombre} | Puntos: ${puntos}`;
+agregarFila(registro)
+
+let boton_eliminar=document.querySelector('#eliminar');
+boton_eliminar.addEventListener('click',()=>{
+
+let registros = JSON.parse(localStorage.getItem("puntuaciones")) ;
+console.log(registros);
+
+    localStorage.removeItem("puntuaciones",JSON.stringify(array))
+});
+
+});
+
+
+
+
+
+
+
+
+const agregarFila=(registro)=>{
+    let tabla = document.getElementById("tabla");
+    //cremos una nueva fila
+    let fila=document.createElement('tr');
+    //creamos una celda
+    let celda_registro = document.createElement("td");
+    //metemos en la celda el registro
+    celda_registro.textContent =registro;
+    //metemos la celda dentro de la fila
+    fila.appendChild(celda_registro);
+    //creamos la celda del boton eliminar
+    let celda_elimina = document.createElement("td");
+    //metemos la celda en la fila
+    fila.appendChild(celda_elimina);
+    //creamos el boton eliminar
+    let elimina=document.createElement('input')
+    //le añadimos sus atributos
+    elimina.setAttribute('type','submit');     
+    elimina.setAttribute('id','eliminar');        
+    elimina.setAttribute('value','Eliminar');
+    //metemos en la celda el botón eliminar
+    celda_elimina.appendChild(elimina);
+    // metemos en la tabla la fila
+    tabla.appendChild(fila);
+  
+
+}
